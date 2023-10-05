@@ -1,0 +1,15 @@
+// this is used to check the change and from user
+import 'package:flutter/cupertino.dart';
+import 'package:glosary_admin/services/darktheme_preferences.dart';
+class themeProvider with ChangeNotifier{
+  bool darktheme = false;
+  Dark_theme_pref pref = Dark_theme_pref();
+  bool get getDarktheme => darktheme;
+  set setDarktheme(bool value){
+    darktheme = value;
+    pref.setTheme(value);
+    notifyListeners();
+  }
+
+
+}
